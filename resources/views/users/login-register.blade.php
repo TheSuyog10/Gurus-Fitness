@@ -28,7 +28,7 @@
         });
     </script>
     <style>.alert-message {
-        position: fixed;
+        position: absolute;
         top: 10%;
         left: 50%;
         transform: translateX(-50%);
@@ -76,15 +76,20 @@
                     
                     
                     @if ($errors->any())
-                    <div id="error-message" class="alert alert-danger" style="text-align:center;color:red; font-weight:400">
+                    <div id="error-messages" class="alert alert-danger" style="text-align:center;color:red; font-weight:600">
                         <ul>
                             <li><i class="fa-solid fa-triangle-exclamation" style="color: #red;"></i> {{ $errors->first()}}</li> 
                         </ul>
                     </div>
+
                 @endif
+                <script>setTimeout(function() {
+                    $('#error-messages').fadeOut('slow');
+                }, 2000);
+            </script>
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input type="text" name="email" id="email" class="input-field"
+                                <input type="text" name="email" id="email" class="input-field" value="{{old('email')}}"
                                     autocomplete="off" />
                                 <label><i class="fa-solid fa-at"></i> Email</label>
                             </div>
@@ -113,22 +118,23 @@
                             </h2>
                             <h6>Already have an account?</h6>
                             <a href="#" class="toggle">Sign in </a>
+                            <div id="error-message"> 
+                            </div>
                         </div>
                         
-                    <div id="error-message"> 
-                    </div>
+                    
                 
-                {{-- To Make This  Message Disappear --}}
+                
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                 
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input type="text"  name="name" id="name" class="input-field"
+                                <input type="text"  name="name" id="name" class="input-field" value="{{old('name')}}"
                                     autocomplete="off" />
                                 <label><i class="fas fa-user-tie"></i> Name</label>
                             </div>
                             <div class="input-wrap">
-                                <input type="text" name="email" id="email" class="input-field"
+                                <input type="text" name="email" id="email" class="input-field" value="{{old('email')}}"
                                     autocomplete="off" />
                                 <label><i class="fa-solid fa-at"></i> Email</label>
                             </div>
@@ -136,7 +142,7 @@
                             
 
                             <div class="input-wrap">
-                                <input type="password" name="password" id="password" class="input-field"
+                                <input type="password" name="password" id="password" class="input-field" value="{{old('password')}}"
                                     autocomplete="off" />
                                 <label><i class="fas fa-lock"></i> Password</label>
                             </div>
@@ -178,7 +184,7 @@
                                         var errors = jqXHR.responseJSON.errors;
                                         // Display errors on your form
                                         for(var error in errors) {
-                                            $('#error-message').html('<div class="alert alert-danger" style="text-align:center;color:maroon; font-weight:400"><ul><li><i class="fa-solid fa-triangle-exclamation" style="color: #b92727;"></i> ' + errors[error][0] + '</li></ul><br></div>').fadeIn();
+                                            $('#error-message').html('<div class="alert alert-danger" style="text-align:center;color:red; font-weight:600"><i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> ' + errors[error][0] + '</div>').fadeIn();
                                             setTimeout(function() {
                                                 $('#error-message').fadeOut('slow');
                                             }, 2000);
@@ -228,16 +234,27 @@
         const main = document.querySelector("main");
         const bullets = document.querySelectorAll(".bullets span");
         const images = document.querySelectorAll(".image");
-
-        inputs.forEach((inp) => {
-            inp.addEventListener("focus", () => {
-                inp.classList.add("active");
-            });
-            inp.addEventListener("blur", () => {
-                if (inp.value != "") return;
-                inp.classList.remove("active");
-            });
+        window.onload = function() {
+    inputs.forEach((inp) => {
+        inp.addEventListener("focus", () => {
+            inp.classList.add("active");
         });
+        inp.addEventListener("blur", () => {
+            if (inp.value != "") {
+                inp.classList.add("active");
+            } else {
+                inp.classList.remove("active");
+            }
+        });
+        // Check if input has value on page load
+        if (inp.value != "") {
+            inp.classList.add("active");
+        }
+    });
+}
+
+
+    
 
         toggle_btn.forEach((btn) => {
             btn.addEventListener("click", () => {
