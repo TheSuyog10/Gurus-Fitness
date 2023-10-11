@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\contact_infoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\contact_infoController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,8 @@ Route::get('/', function () {
 });
 Route::get('/aboutUs', function () {
     return view('mains.aboutUs');
-});
+})->middleware('auth');
+
 //For showing COntact Form
 Route::get('/contactUs', [contact_infoController::class, 'create']);
 // Route::get('/contactUs', function () {
@@ -27,3 +30,11 @@ Route::get('/contactUs', [contact_infoController::class, 'create']);
 // });
 //For Storing the  Contact Information
 Route::post('/contact_info', [contact_infoController::class, 'store']);
+//To show Login Form
+Route::get('/login', [UserController::class, 'create'])->name('login');
+//Create Users / Store User Information
+Route::post('/users', [UserController::class, 'store']);
+//To Logout User
+Route::post('/logout', [UserController::class, 'logout']);
+//Login User / Authenticate User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);

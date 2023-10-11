@@ -1,7 +1,7 @@
 
 <body style="height: 200vh">
     @include('partials._header');
-
+    <x-flash-message />
   <h1>Hello</h1>
 
     @include('partials._footer');

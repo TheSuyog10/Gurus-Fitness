@@ -24,14 +24,31 @@
             <li><a href="listing.php"><i class="fa-regular fa-id-card"></i> <span>Membership</span></a></li>
             <li><a href="aboutUs"><i class="fa-solid fa-circle-info"></i> <span>About Us</span></a></li>
             <li><a href="contactUs"><i class="fa-solid fa-phone-volume"></i> <span>Contact Us</span></a></li>
-            <li><a href="admin\index.php"><i class="fa-solid fa-right-to-bracket"></i> <span>Login</span></a></li>
+            @auth
+            <li>
+                <a>
+                <form action="/logout" class="inline" method="Post" style="margin: 0; padding: 0;">
+                    @csrf
+                    <button type="submit" class="logout-button" style="background: none;   font-size: 1em;                
+                    font-weight: bold;border: none; padding: 0; color: #001427;  margin: 0;">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i> 
+                        <span>Logout</span>
+                    </button>
+                </form>
+            </a> 
+        </li>
+        @else
+        <li><a href="login"><i class="fa-solid fa-arrow-right-to-bracket"></i>  <span>Login</span></a></li>
+        @endauth
+        
+        
+        
         </ul>
     </header>
-
+    <x-flash-message />
 </body>
-<style>
-    * {
-        box-sizing: border-box;
+<style>   
+    * { box-sizing: border-box;
     }
 
 
