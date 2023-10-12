@@ -1,9 +1,10 @@
-
 <body style="height: 200vh">
     @include('partials._header');
     <x-flash-message />
-  <h1>Hello</h1>
-
+    <h1>Hello</h1>
+    @auth
+        <p>Welcome, {{ auth()->user()->name }}</p>
+    @endauth
     @include('partials._footer');
 
 

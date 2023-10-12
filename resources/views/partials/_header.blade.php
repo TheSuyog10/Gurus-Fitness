@@ -10,14 +10,18 @@
 
 <body>
     <header class="header">
-        <h1 class="logo"><a href="index.php">Gurus <span style="color: #006d77;">Fitness</span></a></h1>
+        <h1 class="logo"><a href="index.php">Gurus <span style="color: #006d77;">Fitness</span></a></h1> @auth
+            Welcome, {{ auth()->user()->name }}
+        @endauth
+
+
         <ul class="main-nav">
             <li>
                 <p><a href="index.php"><i class="fa-solid fa-house"></i>
                         <span> Home</span>
                     </a></p>
             </li>
-            <!-- 
+            <!--
             <li><a href="booking.php"><i class="fa-regular fa-calendar-days"></i><span> Booking</span></a></li> -->
             <li><a><i class="fa-solid fa-dumbbell"></i><span>Trainers</span></a></li>
             <li><a href="#"><i class="fa-solid fa-newspaper"></i> <span>Classes</span></a></li>
@@ -25,30 +29,32 @@
             <li><a href="aboutUs"><i class="fa-solid fa-circle-info"></i> <span>About Us</span></a></li>
             <li><a href="contactUs"><i class="fa-solid fa-phone-volume"></i> <span>Contact Us</span></a></li>
             @auth
-            <li>
-                <a>
-                <form action="/logout" class="inline" method="Post" style="margin: 0; padding: 0;">
-                    @csrf
-                    <button type="submit" class="logout-button" style="background: none;   font-size: 1em;                
+                <li>
+                    <a>
+                        <form action="/logout" class="inline" method="Post" style="margin: 0; padding: 0;">
+                            @csrf
+                            <button type="submit" class="logout-button"
+                                style="background: none;   font-size: 1em;                
                     font-weight: bold;border: none; padding: 0; color: #001427;  margin: 0;">
-                        <i class="fa-solid fa-arrow-right-to-bracket"></i> 
-                        <span>Logout</span>
-                    </button>
-                </form>
-            </a> 
-        </li>
-        @else
-        <li><a href="login"><i class="fa-solid fa-arrow-right-to-bracket"></i>  <span>Login</span></a></li>
-        @endauth
-        
-        
-        
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                <span>Logout</span>
+                            </button>
+                        </form>
+                    </a>
+                </li>
+            @else
+                <li><a href="login"><i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Login</span></a></li>
+            @endauth
+
+
+
         </ul>
     </header>
-    <x-flash-message />
+
 </body>
-<style>   
-    * { box-sizing: border-box;
+<style>
+    * {
+        box-sizing: border-box;
     }
 
 
@@ -142,7 +148,7 @@
     }
 
 
-    /* ================================= 
+    /* =================================
   Media Queries
 ==================================== */
 

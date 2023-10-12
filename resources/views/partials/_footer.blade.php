@@ -19,12 +19,11 @@
         <div class="content">
             <div class="services">
                 <h2 class="sub-heading">Services</h2>
-                <p><a href="aboutUs.php#services">Property Management</a></p>
-                <p><a href="aboutUs.php#services">Residential Sales & Leasing</a></p>
-                <p><a href="aboutUs.php#services">Real Estate Consulting</a></p>
-                <p><a href="aboutUs.php#services">Brokerage Services</a></p>
-                <p><a href="aboutUs.php#services">Real Estate
-                        Appraisal</a> </p>
+                <p><a href="{{ url('/aboutUs') }}#services">Gym Access</a></p>
+                <p><a href="{{ url('/aboutUs') }}#services">Yoga Classes</a></p>
+                <p><a href="{{ url('/aboutUs') }}#services">Private Instructor</a></p>
+                <p><a href="{{ url('/aboutUs') }}#services">Social Connectivity</a></p>
+                <p><a href="{{ url('/aboutUs') }}#services">Sauna Room</a> </p>
             </div>
             <div class="social-media1">
                 <h2 class="sub-heading">Quick Links</h2>
@@ -74,9 +73,9 @@
         display: flex;
         flex-direction: column;
         /* min-height: 100vh; */
-        margin: 0!important;
+        margin: 0 !important;
         /* Remove default margin */
-        padding: 0!important;
+        padding: 0 !important;
         /* Remove default padding */
     }
 
@@ -103,7 +102,7 @@
         background-color: #83c5be;
         color: #4a4e69;
         width: 100%;
-        bottom: -100px!important;
+        bottom: -100px !important;
         left: 0;
         margin-top: auto;
         /* Push the footer to the bottom using 'auto' margin */

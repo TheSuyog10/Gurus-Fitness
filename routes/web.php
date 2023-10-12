@@ -21,10 +21,10 @@ Route::get('/', function () {
 });
 Route::get('/aboutUs', function () {
     return view('mains.aboutUs');
-})->middleware('auth');
-
+});
 //For showing COntact Form
-Route::get('/contactUs', [contact_infoController::class, 'create']);
+Route::get('/contactUs', [contact_infoController::class, 'create'])->middleware('auth');
+
 // Route::get('/contactUs', function () {
 //     return view('contact_info.contactUs');
 // });

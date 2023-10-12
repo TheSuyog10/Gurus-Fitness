@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,19 +15,18 @@
         <div class="container">
             <div class="row">
                 <div class="about-col1">
-                    <img src="assets\images\UnitedLimitedLogo.png">
+                    <img src="{{ asset('images/logo1.png') }}">
 
                 </div>
 
                 <div class="about-col2">
                     <h1 class="sub-title" style="color:#2f0e07;">About US </h1>
-                    <p> United Limited is a distinguished name in the real estate landscape of Bharatpur-4, Chitwan,
-                        Nepal. Established with a clear vision and an unwavering commitment to excellence, United
-                        Limited has swiftly risen to prominence as a reputable and trusted real estate company.
-                        <br>
-                        At United Limited, our mission is clear - to be the foremost choice for those seeking
-                        exceptional real estate services. We believe in not just meeting but exceeding the expectations
-                        of our clients. We aim to provide top-notch solutions for all your real estate requirements.
+                    <p> Welcome to Gurus of Fitness, where we're committed to helping you achieve your health and
+                        wellness goals in a vibrant and welcoming environment. Our state-of-the-art gym is equipped with
+                        top-notch cardio and strength training equipment, making it the ideal destination for fitness
+                        enthusiasts of all levels. In addition, we offer invigorating Zumba and serene yoga classes in
+                        the mornings and evenings, providing a well-rounded fitness experience that goes beyond
+                        traditional workouts.
 
 
 
@@ -44,10 +42,10 @@
 
                     <div>
                         <ul class="tab-content active-tab " id="skills">
-                            <li class="tittle-name">Excellence in Service</li><br>
-                            <li class="tittle-name">Community Enrichment</li><br>
-                            <li class="tittle-name">Client-Centric Approach</li><br>
-                            <li class="tittle-name">Local Expertise</li>
+                            <li class="tittle-name">Inspiration and Empowerment</li><br>
+                            <li class="tittle-name">Inclusivity</li><br>
+                            <li class="tittle-name">Passion for Fitness</li><br>
+                            <li class="tittle-name">Lifestyle Transformation</li>
 
 
                         </ul>
@@ -56,20 +54,20 @@
                         <ul class="tab-content" id="experience">
 
 
-                            <li class="tittle-name">Transparent Communication
+                            <li class="tittle-name">Diverse Offerings
                             </li><br>
-                            <li class="tittle-name">Proven Integrity
+                            <li class="tittle-name">Expert Instructors
                             </li><br>
-                            <li class="tittle-name">Innovative Technology
+                            <li class="tittle-name">Latest Technology
                             </li><br>
-                            <li class="tittle-name">Personalized Service
+                            <li class="tittle-name">Social and Online Support
                             </li>
                         </ul>
                     </div>
                     <div>
                         <ul class="tab-content" id="education">
-                            <li class="tittle-name">Innovation and Adaptability </li><br>
-                            <li class="tittle-name">Quality and Excellence</li><br>
+                            <li class="tittle-name">Quality and Excellence </li><br>
+                            <li class="tittle-name">Passion for Wellness</li><br>
                             <li class="tittle-name">Sustainability and Responsibility</li><br>
                             <li class="tittle-name">Communication and Collaboration</li>
                         </ul>
@@ -92,6 +90,7 @@
     <script>
         var tablinks = document.getElementsByClassName("tab-link");
         var tabcontents = document.getElementsByClassName("tab-content");
+
         function opentab(tabname) {
             for (tablink of tablinks) {
                 tablink.classList.remove("active-link");
@@ -110,59 +109,58 @@
             <h1 class="sub-title" style="color:#2f0e07;"> Our Services</h1>
             <div class="services-list">
                 <div>
-                    <img src="assets\images\propertyManangement.png" alt="" style="width:60px; height:60px;">
+                    <img src="{{ asset('images/gym.png') }}" alt="" style="width:60px; height:60px;">
 
 
-                    <h2>Property Management</h2>
-                    <p>We offer comprehensive property management services, handling everything from tenant relations to
-                        maintenance and repairs. Our goal is to make property ownership hassle-free for you, ensuring
-                        your real estate is well-managed and profitable. Trust us to take care of your property as if it
-                        were our own.</p>
+                    <h2>Gym Access</h2>
+                    <p>Experience unlimited access to our state-of-the-art gym, equipped with the latest cardio and
+                        strength training equipment. Our facility provides a comprehensive workout experience, enabling
+                        you to achieve your fitness goals. Enjoy a transformative fitness journey.
+                    </p>
 
                 </div>
                 <div>
-                    <img src="assets\images\realstateConsulting.png" alt=""
+                    <img src="{{ asset('images/zumba.png') }}" alt=""
                         style="position: sticky; width:60px; height:60px; top:-40px padding-bootom:0;">
 
-                    <h2>Realestate Consulting</h2>
-                    <p> Our real estate consulting services provide strategic guidance to navigate the complex property
-                        market. We offer expert advice on property investment, market trends, and valuation, helping you
-                        make informed decisions. Our goal is to maximize your returns and minimize risks in real estate
-                        investments.</p>
+                    <h2>Zumba Classes</h2>
+                    <p> Immerse yourself in the world of dynamic and high-energy Zumba classes. Designed for fitness
+                        enthusiasts who relish the joy of dance, our Zumba sessions offer a vibrant and effective way to
+                        stay fit while having a blast. Join the rhythm and let the music move you.</p>
 
                 </div>
                 <div>
-                    <img src="assets\images\residentalSales.png" alt="" style="width:60px; height:60px;">
-                    <h2>Residental Sales</h2>
-                    <p>We specialize in residential sales, connecting potential homeowners with their dream properties.
-                        Our team understands the market trends and leverages this knowledge to ensure smooth
-                        transactions. We’re committed to providing a seamless buying and selling experience for all our
-                        clients.</p>
+                    <img src="{{ asset('images/yoga-pose.png') }}" alt="" style="width:60px; height:60px;">
+                    <h2>Yoga Classes</h2>
+                    <p>Indulge in serene and calming yoga classes that emphasize flexibility, mindfulness, and
+                        relaxation. Our expert instructors guide you through postures and breathing techniques,
+                        fostering a tranquil and balanced state of mind while enhancing your physical flexibility.</p>
 
                 </div>
                 <div>
-                    <img src="assets\images\appraisal.png" alt="" style="width:60px; height:60px;">
-                    <h2>Property Appraisal</h2>
-                    <p>Our team provides comprehensive property appraisal services, accurately assessing the value of
-                        real estate assets. We consider market trends, location, and property condition to deliver a
-                        fair and reliable valuation, helping you make informed decisions about your property.</p>
+                    <img src="{{ asset('images/sauna.png') }}" alt="" style="width:60px; height:60px;">
+                    <h2>Sauna Room</h2>
+                    <p> Step into our serene sauna room, a tranquil haven designed for post-workout relaxation and
+                        muscle recovery. Immerse yourself in the gentle, soothing heat that helps melt away tension,
+                        reduce stress, and promote a deep sense of well-being. </p>
 
                 </div>
                 <div>
-                    <img src="assets\images\broker.png" alt="" style="width:60px; height:60px;">
-                    <h2>Brokerage Services</h2>
-                    <p>Our brokerage services are your pathway to seamless real estate transactions. With a dedicated
-                        team of experts, we guide clients through the intricate process of buying and selling
-                        properties, ensuring optimal deals and successful outcomes.</p>
+                    <img src="{{ asset('images/private_trainer.png') }}" alt=""
+                        style="width:60px; height:60px;">
+                    <h2>Private Instructor</h2>
+                    <p>Elevate your fitness journey with personalized training sessions led by our certified trainers.
+                        Tailored to your unique goals, these one-on-one sessions maximize your potential and ensure you
+                        reach the heights of your fitness aspirations.</p>
 
                 </div>
                 <div>
-                    <img src="assets\images\maintenance.png" alt="" style="width:60px; height:60px;">
-                    <h2>Renovation Projects</h2>
-                    <p>Unlock the full potential of your property with our renovation services. Our skilled team
-                        specializes in revitalizing spaces, enhancing not only their aesthetic appeal but also their
-                        overall functionality. Experience an increase in value and an elevated living environment with
-                        our expert renovations</p>
+                    <img src="{{ asset('images/forum.png') }}" alt="" style="width:60px; height:60px;">
+                    <h2>Social Connectivity</h2>
+                    <p>
+                        Stay engaged with our vibrant fitness community through interactive online
+                        forums and seamless social media integration. Connect with fellow fitness enthusiasts, share
+                        experiences, and find the motivation you need to thrive in your fitness journey.</p>
 
                 </div>
 
@@ -172,7 +170,7 @@
         </div>
 
     </div>
-@include('partials._footer');
+    @include('partials._footer');
 </body>
 <style>
     body {
