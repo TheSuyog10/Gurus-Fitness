@@ -10,9 +10,7 @@
 
 <body>
     <header class="header">
-        <h1 class="logo"><a href="index.php">Gurus <span style="color: #006d77;">Fitness</span></a></h1> @auth
-            Welcome, {{ auth()->user()->name }}
-        @endauth
+        <h1 class="logo"><a href="index.php">Gurus <span style="color: #006d77;">Fitness</span></a></h1>
 
 
         <ul class="main-nav">
@@ -23,7 +21,7 @@
             </li>
             <!--
             <li><a href="booking.php"><i class="fa-regular fa-calendar-days"></i><span> Booking</span></a></li> -->
-            <li><a><i class="fa-solid fa-dumbbell"></i><span>Trainers</span></a></li>
+            <li><a href="forum"><i class="fa-solid fa-dumbbell"></i><span>Forum</span></a></li>
             <li><a href="#"><i class="fa-solid fa-newspaper"></i> <span>Classes</span></a></li>
             <li><a href="listing.php"><i class="fa-regular fa-id-card"></i> <span>Membership</span></a></li>
             <li><a href="aboutUs"><i class="fa-solid fa-circle-info"></i> <span>About Us</span></a></li>

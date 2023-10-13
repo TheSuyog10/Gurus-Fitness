@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ForumController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contact_infoController;
@@ -38,3 +39,9 @@ Route::post('/users', [UserController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 //Login User / Authenticate User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+//Show all the forums
+Route::get('/forum', [ForumController::class, 'index'])->middleware('auth');
+//Show Form to post in forum
+Route::get('/postforum', [ForumController::class, 'create'])->middleware('auth');
+//For Storing the  Forum Information
+Route::post('/forum', [ForumController::class, 'store'])->middleware('auth');
