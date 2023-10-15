@@ -23,7 +23,7 @@
             <li><a href="booking.php"><i class="fa-regular fa-calendar-days"></i><span> Booking</span></a></li> -->
             <li><a href="forum"><i class="fa-solid fa-dumbbell"></i><span>Forum</span></a></li>
             <li><a href="#"><i class="fa-solid fa-newspaper"></i> <span>Classes</span></a></li>
-            <li><a href="listing.php"><i class="fa-regular fa-id-card"></i> <span>Membership</span></a></li>
+            <li><a href="membership"><i class="fa-regular fa-id-card"></i> <span>Membership</span></a></li>
             <li><a href="aboutUs"><i class="fa-solid fa-circle-info"></i> <span>About Us</span></a></li>
             <li><a href="contactUs"><i class="fa-solid fa-phone-volume"></i> <span>Contact Us</span></a></li>
             @auth

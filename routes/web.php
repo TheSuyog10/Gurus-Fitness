@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\ForumController;
+use App\Models\Membership;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\contact_infoController;
-use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,9 @@ Route::get('/forum', [ForumController::class, 'index'])->middleware('auth');
 Route::get('/postforum', [ForumController::class, 'create'])->middleware('auth');
 //For Storing the  Forum Information
 Route::post('/forum', [ForumController::class, 'store'])->middleware('auth');
+//Show Membership Plan
+Route::get('/membership', [MembershipController::class, 'index']);
+//Show Membership Booking Form
+Route::get('/booking', [MembershipController::class, 'create']);
+//For Storing the  Booking  Information
+Route::post('/membership', [MembershipController::class, 'store']);

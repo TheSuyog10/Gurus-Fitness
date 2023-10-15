@@ -70,9 +70,7 @@
     }
 
     body {
-        display: flex;
-        flex-direction: column;
-        /* min-height: 100vh; */
+
         margin: 0 !important;
         /* Remove default margin */
         padding: 0 !important;
@@ -105,7 +103,7 @@
         bottom: -100px !important;
         left: 0;
         margin-top: auto;
-        /* Push the footer to the bottom using 'auto' margin */
+
         border: 1px solid #a2a2a2;
         -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
@@ -116,7 +114,7 @@
     }
 
     .footer .heading {
-        color: #6f1d1b;
+        color: 001427;
         max-width: 1010px;
         width: 90%;
         text-transform: uppercase;
