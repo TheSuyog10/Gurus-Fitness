@@ -12,55 +12,57 @@
 </head>
 
 <body>
-    <div class="footer">
-        <div class="heading">
-            <h2 style="align-text:center">Gurus <span style="color: #006d77;">Fitness</span></h2>
+    <div class="body">
+        <div class="footer">
+            <div class="heading">
+                <h2 style="align-text:center">Gurus <span style="color: #006d77;">Fitness</span></h2>
+            </div>
+            <div class="content">
+                <div class="services">
+                    <h2 class="sub-heading">Services</h2>
+                    <p><a href="{{ url('/aboutUs') }}#services">Gym Access</a></p>
+                    <p><a href="{{ url('/aboutUs') }}#services">Yoga Classes</a></p>
+                    <p><a href="{{ url('/aboutUs') }}#services">Private Instructor</a></p>
+                    <p><a href="{{ url('/aboutUs') }}#services">Social Connectivity</a></p>
+                    <p><a href="{{ url('/aboutUs') }}#services">Sauna Room</a> </p>
+                </div>
+                <div class="social-media1">
+                    <h2 class="sub-heading">Quick Links</h2>
+                    <p>
+                        <a href="index.php">Home</a>
+                    </p>
+                    <p>
+                        <a href="aboutUs.php">About Us</a>
+                    </p>
+                    <p>
+                        <a href="booking.php">Book Now</a>
+                    </p>
+                    <p>
+                        <a href="listing.php">Listing</a>
+                    </p>
+                    <p>
+                        <a href="#">News And Events</a>
+                    </p>
+
+
+                </div>
+                <div class="links">
+                    <h2 class="sub-heading">Contact</h2>
+                    <p>Bharatpur-4, Chitwan, Nepal</p>
+                    <p>Phone: +977 9845911212</p>
+                    <p>Email: <a href="mailto:Gurus.Fitness@gmail.com">Gurus.Fitness@gmail.com</a></p>
+                    <p>Website: <a href="http://www.GurusFitness.com.np">www.GurusFitness.com.np</a></p>
+
+                    <p><a href="" class="icon"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+                        <a href="" class="icon"><i class="fa-brands fa-x-twitter fa-2xl"></i></a>
+                    </p>
+                </div>
+            </div>
+            <footer>
+
+                All rights reserved © 2023 Gurus Fitness
+            </footer>
         </div>
-        <div class="content">
-            <div class="services">
-                <h2 class="sub-heading">Services</h2>
-                <p><a href="{{ url('/aboutUs') }}#services">Gym Access</a></p>
-                <p><a href="{{ url('/aboutUs') }}#services">Yoga Classes</a></p>
-                <p><a href="{{ url('/aboutUs') }}#services">Private Instructor</a></p>
-                <p><a href="{{ url('/aboutUs') }}#services">Social Connectivity</a></p>
-                <p><a href="{{ url('/aboutUs') }}#services">Sauna Room</a> </p>
-            </div>
-            <div class="social-media1">
-                <h2 class="sub-heading">Quick Links</h2>
-                <p>
-                    <a href="index.php">Home</a>
-                </p>
-                <p>
-                    <a href="aboutUs.php">About Us</a>
-                </p>
-                <p>
-                    <a href="booking.php">Book Now</a>
-                </p>
-                <p>
-                    <a href="listing.php">Listing</a>
-                </p>
-                <p>
-                    <a href="#">News And Events</a>
-                </p>
-
-
-            </div>
-            <div class="links">
-                <h2 class="sub-heading">Contact</h2>
-                <p>Bharatpur-4, Chitwan, Nepal</p>
-                <p>Phone: +977 9845911212</p>
-                <p>Email: <a href="mailto:Gurus.Fitness@gmail.com">Gurus.Fitness@gmail.com</a></p>
-                <p>Website: <a href="http://www.GurusFitness.com.np">www.GurusFitness.com.np</a></p>
-
-                <p><a href="" class="icon"><i class="fa-brands fa-facebook fa-2xl"></i></a>
-                    <a href="" class="icon"><i class="fa-brands fa-x-twitter fa-2xl"></i></a>
-                </p>
-            </div>
-        </div>
-        <footer>
-
-            All rights reserved © 2023 Gurus Fitness
-        </footer>
     </div>
 </body>
 <style>
@@ -71,10 +73,18 @@
 
     body {
 
-        margin: 0 !important;
+        margin: 0;
         /* Remove default margin */
-        padding: 0 !important;
+        padding: 0;
         /* Remove default padding */
+
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-content: flex-end;
     }
 
     .icon {
@@ -96,14 +106,16 @@
     }
 
     .footer {
+
+
         flex-shrink: 0;
         background-color: #83c5be;
         color: #4a4e69;
         width: 100%;
-        bottom: -100px !important;
+        bottom: 0;
         left: 0;
         margin-top: auto;
-
+        /* Push the footer to the bottom using 'auto' margin */
         border: 1px solid #a2a2a2;
         -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
@@ -114,7 +126,7 @@
     }
 
     .footer .heading {
-        color: 001427;
+        color: #6f1d1b;
         max-width: 1010px;
         width: 90%;
         text-transform: uppercase;
@@ -187,5 +199,6 @@
         }
     }
 </style>
+
 
 </html>

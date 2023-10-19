@@ -5,6 +5,7 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\contact_infoController;
 
@@ -44,12 +45,20 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 //Show all the forums
 Route::get('/forum', [ForumController::class, 'index'])->middleware('auth');
 //Show Form to post in forum
-Route::get('/postforum', [ForumController::class, 'create'])->middleware('auth');
+Route::get('/postforum', [ForumController::class, 'create'])->middleware('auth')->middleware('auth');
 //For Storing the  Forum Information
-Route::post('/forum', [ForumController::class, 'store'])->middleware('auth');
+Route::post('/forum', [ForumController::class, 'store'])->middleware('auth')->middleware('auth');
 //Show Membership Plan
 Route::get('/membership', [MembershipController::class, 'index']);
 //Show Membership Booking Form
-Route::get('/booking', [MembershipController::class, 'create']);
+Route::get('/booking', [MembershipController::class, 'create'])->middleware('auth');
 //For Storing the  Booking  Information
-Route::post('/membership', [MembershipController::class, 'store']);
+Route::post('/membership', [MembershipController::class, 'store'])->middleware('auth');
+//LOgin Using Google Account
+Route::prefix('google')->name('google.')->group(
+    function () {
+        Route::get('login', [GoogleController::class, 'loginWithGoogle'])->name('login');
+        Route::any('callback', [GoogleController::class, 'callBackFromGoogle'])->name('callback');
+
+    }
+);

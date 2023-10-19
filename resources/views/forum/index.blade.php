@@ -44,29 +44,46 @@
             </div>
         </div>
     </a>
-    @foreach ($forum as $forums)
+    @if ($forum->isempty())
         <div class="container">
 
             <h1>
-                <p style="font-size: 20px; font-weight:800px;"> <i class="fa-solid fa-circle-user"
-                        style="font-size:20px;"></i> {{ $forums->name }}
+                <p style="font-size: 20px; font-weight:800px;">
                 </p>
             </h1>
-            <p style="font-size: 20px; font-weight:400px; margin:8px 40px;">{{ $forums->description }}</p>
+            <p style="font-size: 20px; font-weight:400px; margin:8px 40px;"></p>
 
-            <img src="{{ asset('storage/' . $forums->image) }}" alt="">
+            <img src="{{ asset('images/nopost.jpg') }}" alt="">
 
 
 
 
         </div>
-    @endforeach
+    @else
+        @foreach ($forum as $forums)
+            <div class="container">
 
+                <h1>
+                    <p style="font-size: 20px; font-weight:800px;"> <i class="fa-solid fa-circle-user"
+                            style="font-size:20px;"></i> {{ $forums->name }}
+                    </p>
+                </h1>
+                <p style="font-size: 20px; font-weight:400px; margin:8px 40px;">{{ $forums->description }}</p>
+
+                <img src="{{ asset('storage/' . $forums->image) }}" alt="">
+
+
+
+
+            </div>
+        @endforeach
+    @endif
     <x-flash-message />
 </body>
 <style>
     body {
         background-color: #4d787b;
+
     }
 
     .user-info {
@@ -251,6 +268,8 @@
         padding: 0 8px;
         width: 2.8em;
     }
+
+
 
     /* Add media queries for responsiveness */
     @media screen and (max-width: 768px) {

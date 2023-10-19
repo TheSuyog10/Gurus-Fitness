@@ -40,7 +40,8 @@ class MembershipController extends Controller
                 'email' => 'Invalid Email',
                 'min' => 'Invalid Phone Number',
                 'max' => 'Invalid Phone Number',
-                'regex' => 'Invalid Phone Number'
+                'phone.regex' => 'Invalid Phone Number',
+                'duration.regex' => 'Invalid Duration'
 
             ]
         );

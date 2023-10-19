@@ -44,24 +44,29 @@
                         </script>
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input type="text" name="name" class="input-field" autocomplete="off" />
+                                <input type="text" name="name" class="input-field" autocomplete="off"
+                                    value="{{ old('name') }}" />
                                 <label><i class="fa-solid fa-user"></i> Name</label>
                             </div>
 
                             <div class="input-wrap">
-                                <input type="text" name="email" class="input-field" autocomplete="off" />
+                                <input type="text" name="email" class="input-field" autocomplete="off"
+                                    value="{{ old('email') }}" />
                                 <label><i class="fa-solid fa-envelope"></i> Email</label>
                             </div>
                             <div class="input-wrap">
-                                <input type="tel" name="phone" class="input-field" autocomplete="off" />
+                                <input type="tel" name="phone" class="input-field" autocomplete="off"
+                                    value="{{ old('phone') }}" />
                                 <label><i class="fa-solid fa-phone"></i> Phone</label>
                             </div>
                             <div class="input-wrap">
-                                <input type="text" name="planname" class="input-field" autocomplete="off" />
+                                <input type="text" name="planname" class="input-field" autocomplete="off"
+                                    value="{{ old('planname') }}" />
                                 <label><i class="fa-regular fa-id-card"></i> Plan Name</label>
                             </div>
                             <div class="input-wrap">
-                                <input type="text" name="duration"class="input-field" autocomplete="off" />
+                                <input type="text" name="duration"class="input-field" autocomplete="off"
+                                    value="{{ old('duration') }}" />
                                 <label><i class="fa-solid fa-calendar-week"></i> Duration(in months)</label>
                             </div>
 
@@ -407,6 +412,28 @@
         }
     }
 </style>
+<script>
+    const inputs = document.querySelectorAll(".input-field");
 
+
+    window.onload = function() {
+        inputs.forEach((inp) => {
+            inp.addEventListener("focus", () => {
+                inp.classList.add("active");
+            });
+            inp.addEventListener("blur", () => {
+                if (inp.value != "") {
+                    inp.classList.add("active");
+                } else {
+                    inp.classList.remove("active");
+                }
+            });
+            // Check if input has value on page load
+            if (inp.value != "") {
+                inp.classList.add("active");
+            }
+        });
+    }
+</script>
 
 </html>

@@ -30,5 +30,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'google' => [
+        'client_id' => '105482375389-i3o5rqmh7dvthrllrvli7icnij2jjl36',
+        'client_secret' => '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',
+        'redirect' => 'http://gurusfitness.org/google/callback',
+    ]
 
 ];

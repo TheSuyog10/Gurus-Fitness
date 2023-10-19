@@ -15,47 +15,50 @@
 </head>
 
 <body>
-@include('partials._header')
+    @include('partials._header')
     <main>
         <div class="contents">
-            @if(request()->has('message'))
-    <div class="alert-message">
-        {{ request()->get('message') }}
-    </div>
-    <script>
-        $(document).ready(function() {
-            $(".alert-message").delay(2000).fadeOut("slow");
-        });
-    </script>
-    <style>.alert-message {
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        background-color: #50ff50f9;
-        color: rgba(8, 6, 6, 0.982);
-        padding: 10px 40px;
-        font-weight: bold;
-        border-radius: 20px;
-        
-    }</style>
-@endif
+            @if (request()->has('message'))
+                <div class="alert-message">
+                    {{ request()->get('message') }}
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $(".alert-message").delay(2000).fadeOut("slow");
+                    });
+                </script>
+                <style>
+                    .alert-message {
+                        position: absolute;
+                        top: 10%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        background-color: #50ff50f9;
+                        color: rgba(8, 6, 6, 0.982);
+                        padding: 10px 40px;
+                        font-weight: bold;
+                        border-radius: 20px;
+
+                    }
+                </style>
+            @endif
             <img src="..\assets\listingimages\house.jpg" alt="">
             <div style="position:absolute"></div>
             <H1 style="left:left;">Registor to Buy Property @auth
-                <li>
-                  <span class="font-bold uppercase">Welcom {{auth()->user()->name}}</span>
-                </li> @endauth</H1>
+                    <li>
+                        <span class="font-bold uppercase">Welcom {{ auth()->user()->name }}</span>
+                </li> @endauth
+            </H1>
         </div>
-        
+
         @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
 
 
         <div class="box">
@@ -73,40 +76,45 @@
                             <a href="#" class="toggle">Sign up</a>
                         </div>
                         @csrf
-                    
-                    
-                    @if ($errors->any())
-                    <div id="error-messages" class="alert alert-danger" style="text-align:center;color:red; font-weight:600">
-                        <ul>
-                            <li><i class="fa-solid fa-triangle-exclamation" style="color: #red;"></i> {{ $errors->first()}}</li> 
-                        </ul>
-                    </div>
 
-                @endif
-                <script>setTimeout(function() {
-                    $('#error-messages').fadeOut('slow');
-                }, 2000);
-            </script>
+
+                        @if ($errors->any())
+                            <div id="error-messages" class="alert alert-danger"
+                                style="text-align:center;color:red; font-weight:600">
+                                <ul>
+                                    <li><i class="fa-solid fa-triangle-exclamation" style="color: #red;"></i>
+                                        {{ $errors->first() }}</li>
+                                </ul>
+                            </div>
+                        @endif
+                        <script>
+                            setTimeout(function() {
+                                $('#error-messages').fadeOut('slow');
+                            }, 2000);
+                        </script>
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input type="text" name="email" id="email" class="input-field" value="{{old('email')}}"
-                                    autocomplete="off" />
+                                <input type="text" name="email" id="email" class="input-field"
+                                    value="{{ old('email') }}" autocomplete="off" />
                                 <label><i class="fa-solid fa-at"></i> Email</label>
                             </div>
 
                             <div class="input-wrap">
-                                <input type="password"  class="input-field" name="password"
-                                    autocomplete="off" />
+                                <input type="password" class="input-field" name="password" autocomplete="off" />
                                 <label><i class="fas fa-lock"></i> Password</label>
                             </div>
 
                             <input type="submit" name="signIn" value="Sign In" class="sign-btn" />
-
+                            <a href="{{ route('google.login') }}" class="sign-btn">
+                                <img src="images/icon.ico" alt=""
+                                    style="height:30px; width:30px; margin-right:3px;">
+                                Continue with Google
+                            </a>
 
                         </div>
                     </form>
-                   
-                    <form id="signupForm" action="/users" method="POST"autocomplete="off" class="sign-up-form"  >
+
+                    <form id="signupForm" action="/users" method="POST"autocomplete="off" class="sign-up-form">
                         @csrf
                         <div class="logo">
                             <img src="../assets\images\logo.png " alt="Gurus Fitness" />
@@ -118,42 +126,43 @@
                             </h2>
                             <h6>Already have an account?</h6>
                             <a href="#" class="toggle">Sign in </a>
-                            <div id="error-message"> 
+                            <div id="error-message">
                             </div>
                         </div>
-                        
-                    
-                
-                
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                
+
+
+
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input type="text"  name="name" id="name" class="input-field" value="{{old('name')}}"
-                                    autocomplete="off" />
+                                <input type="text" name="name" id="name" class="input-field"
+                                    value="{{ old('name') }}" autocomplete="off" />
                                 <label><i class="fas fa-user-tie"></i> Name</label>
                             </div>
                             <div class="input-wrap">
-                                <input type="text" name="email" id="email" class="input-field" value="{{old('email')}}"
-                                    autocomplete="off" />
+                                <input type="text" name="email" id="email" class="input-field"
+                                    value="{{ old('email') }}" autocomplete="off" />
                                 <label><i class="fa-solid fa-at"></i> Email</label>
                             </div>
 
-                            
+
 
                             <div class="input-wrap">
-                                <input type="password" name="password" id="password" class="input-field" value="{{old('password')}}"
-                                    autocomplete="off" />
+                                <input type="password" name="password" id="password" class="input-field"
+                                    value="{{ old('password') }}" autocomplete="off" />
                                 <label><i class="fas fa-lock"></i> Password</label>
                             </div>
                             <div class="input-wrap">
-                                <input type="password" name="password_confirmation" id="password_confirmation" class="input-field"
-                                    autocomplete="off" />
+                                <input type="password" name="password_confirmation" id="password_confirmation"
+                                    class="input-field" autocomplete="off" />
                                 <label><i class="fas fa-lock"></i> Confirm Password</label>
                             </div>
 
 
                             <input type="submit" id="signupBtn" name="signUp" value="Sign Up" class="sign-btn" />
+
 
                             <p class="text">
                                 By signing up, I
@@ -164,39 +173,40 @@
                         </div>
                     </form>
                     <script>
-                    $(document).ready(function() {
-                        $('#signupForm').on('submit', function(e) {
-                            e.preventDefault();
-                    
-                            $.ajax({
-                                url: '/users',
-                                method: 'post',
-                                data: $(this).serialize(),
-                                success: function(response) {
-                                    
+                        $(document).ready(function() {
+                            $('#signupForm').on('submit', function(e) {
+                                e.preventDefault();
 
-                                    // Handle successful validation and form submission here
-                                    window.location.href = '/'
-                                },
-                                error: function(jqXHR, textStatus, errorThrown) {
-                                    // Handle failed validation here
-                                    if(jqXHR.status === 422) {
-                                        var errors = jqXHR.responseJSON.errors;
-                                        // Display errors on your form
-                                        for(var error in errors) {
-                                            $('#error-message').html('<div class="alert alert-danger" style="text-align:center;color:red; font-weight:600"><i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> ' + errors[error][0] + '</div>').fadeIn();
-                                            setTimeout(function() {
-                                                $('#error-message').fadeOut('slow');
-                                            }, 2000);
+                                $.ajax({
+                                    url: '/users',
+                                    method: 'post',
+                                    data: $(this).serialize(),
+                                    success: function(response) {
+
+
+                                        // Handle successful validation and form submission here
+                                        window.location.href = '/'
+                                    },
+                                    error: function(jqXHR, textStatus, errorThrown) {
+                                        // Handle failed validation here
+                                        if (jqXHR.status === 422) {
+                                            var errors = jqXHR.responseJSON.errors;
+                                            // Display errors on your form
+                                            for (var error in errors) {
+                                                $('#error-message').html(
+                                                    '<div class="alert alert-danger" style="text-align:center;color:red; font-weight:600"><i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> ' +
+                                                    errors[error][0] + '</div>').fadeIn();
+                                                setTimeout(function() {
+                                                    $('#error-message').fadeOut('slow');
+                                                }, 2000);
+                                            }
                                         }
                                     }
-                                }
+                                });
                             });
                         });
-                    });
-                    
                     </script>
-                                
+
                 </div>
 
                 <!-- <div class="carousel">
@@ -229,42 +239,40 @@
 
     <!-- Javascript file -->
 
-    <script>const inputs = document.querySelectorAll(".input-field");
+    <script>
+        const inputs = document.querySelectorAll(".input-field");
         const toggle_btn = document.querySelectorAll(".toggle");
         const main = document.querySelector("main");
-        const bullets = document.querySelectorAll(".bullets span");
-        const images = document.querySelectorAll(".image");
+
         window.onload = function() {
-    inputs.forEach((inp) => {
-        inp.addEventListener("focus", () => {
-            inp.classList.add("active");
-        });
-        inp.addEventListener("blur", () => {
-            if (inp.value != "") {
-                inp.classList.add("active");
-            } else {
-                inp.classList.remove("active");
-            }
-        });
-        // Check if input has value on page load
-        if (inp.value != "") {
-            inp.classList.add("active");
+            inputs.forEach((inp) => {
+                inp.addEventListener("focus", () => {
+                    inp.classList.add("active");
+                });
+                inp.addEventListener("blur", () => {
+                    if (inp.value != "") {
+                        inp.classList.add("active");
+                    } else {
+                        inp.classList.remove("active");
+                    }
+                });
+                // Check if input has value on page load
+                if (inp.value != "") {
+                    inp.classList.add("active");
+                }
+            });
         }
-    });
-}
 
 
-    
+
 
         toggle_btn.forEach((btn) => {
             btn.addEventListener("click", () => {
                 main.classList.toggle("sign-up-mode");
             });
         });
-
-       
     </script>
-@include('partials._footer')
+    @include('partials._footer')
 </body>
 
 </html>
