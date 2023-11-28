@@ -48,7 +48,7 @@
                     </p>
                     <p>
                         <i class="ri-checkbox-circle-line"></i>
-                        4 Zumba classes / week
+                        Zumba Classes, Mon-Fri, 4-6 PM.
                     </p>
                     <p>
                         <i class="ri-checkbox-circle-line"></i>
@@ -67,7 +67,7 @@
                     </p>
                     <p>
                         <i class="ri-checkbox-circle-line"></i>
-                        4 Yoga classes
+                        Yoga Classes, Mon-Fri, 6-8 AM.
                     </p>
                     <p>
                         <i class="ri-checkbox-circle-line"></i>
@@ -168,10 +168,7 @@
                             <p>Student</p>
                         </div>
                     </div>
-                    <div class="review__nav">
-                        <span><i class="ri-arrow-left-line"></i></span>
-                        <span><i class="ri-arrow-right-line"></i></span>
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -17,29 +17,20 @@ main {
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background-color: #a9a9a9 !important;
+    background-color: #a9a9a9;
     padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-/* .contents {
-    height: 100vh;
-    flex-basis: 75%;
-    background-color: #8371fd;
-}
-.contents img {
-    width: 70%;
+
+.cover img {
+    width: 90%;
     height: auto;
     display: block;
     position: relative;
+    border-radius: 15px;
 }
-.contents h1 {
-    position: absolute;
-    top: 20%;
-    left: 16%;
-    transform: translate(-50%, -50%);
-} */
 .alert-success {
     color: white;
     background-color: limegreen;

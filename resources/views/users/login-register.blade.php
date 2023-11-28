@@ -17,43 +17,48 @@
 <body>
     @include('partials._header')
     <main>
-        <div class="contents">
-            @if (request()->has('message'))
-                <div class="alert-message">
-                    {{ request()->get('message') }}
-                </div>
-                <script>
-                    $(document).ready(function() {
-                        $(".alert-message").delay(2000).fadeOut("slow");
-                    });
-                </script>
-                <style>
-                    .alert-message {
-                        position: absolute;
-                        top: 10%;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        text-align: center;
-                        display: flex;
-                        justify-content: center;
-                        background-color: #50ff50f9;
-                        color: rgba(8, 6, 6, 0.982);
-                        padding: 10px 40px;
-                        font-weight: bold;
-                        border-radius: 20px;
 
-                    }
-                </style>
-            @endif
-            <img src="..\assets\listingimages\house.jpg" alt="">
-            <div style="position:absolute"></div>
-            <H1 style="left:left;">Registor to Buy Property @auth
-                    <li>
-                        <span class="font-bold uppercase">Welcom {{ auth()->user()->name }}</span>
-                </li> @endauth
-            </H1>
+
+
+        <div class="contents">
+            <div class="overlay"
+                style="position: absolute; padding-bottom:10px;top: 9%; left: 0; width: 75%; height: 100%; padding: 20px; border-radius: 10px; background-image: url('images/gymcoverbg.png'); background-repeat: no-repeat; background-blend-mode: lighten; background-size: cover;">
+
+            </div>
         </div>
 
+
+
+
+
+        @if (request()->has('message'))
+            <div class="alert-message">
+                <i class="fa-solid fa-triangle-exclamation" style="margin-top:4px; margin-right:3px; color:white;"></i>
+                {{ request()->get('message') }}
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $(".alert-message").delay(2000).fadeOut("slow");
+                });
+            </script>
+            <style>
+                .alert-message {
+                    position: absolute;
+                    top: 10%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    background-color: rgb(191, 71, 71);
+                    color: rgba(255, 255, 255, 0.982);
+                    padding: 10px 40px;
+                    font-weight: bold;
+                    border-radius: 20px;
+
+                }
+            </style>
+        @endif
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -66,7 +71,7 @@
                 <div class="forms-wrap">
                     <form method="post" autocomplete="off" class="sign-in-form" action="/users/authenticate">
                         <div class="logo">
-                            <img src="../assets\images\logo.png" alt="" />
+
                             <h4>Gurus<span id="span"> Fitness</span></h4>
                         </div>
 
@@ -117,7 +122,7 @@
                     <form id="signupForm" action="/users" method="POST"autocomplete="off" class="sign-up-form">
                         @csrf
                         <div class="logo">
-                            <img src="../assets\images\logo.png " alt="Gurus Fitness" />
+
                             <h4>Gurus<span id="span"> Fitness</span></h4>
                         </div>
 
